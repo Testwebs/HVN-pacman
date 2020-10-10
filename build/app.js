@@ -1366,7 +1366,6 @@ class GameCoordinator {
         `${imgBase}characters/ghosts/scared_white.svg`,
 
         // Dots
-        `${imgBase}pickups/pacdot.svg`,
         `${imgBase}pickups/powerPellet.svg`,
 
         // Fruit
@@ -2566,11 +2565,11 @@ class Pickup {
    */
   setStyleMeasurements(type, scaledTileSize, column, row, points) {
     if (type === 'pacdot') {
-      this.size = scaledTileSize * 0.25;
-      this.x = (column * scaledTileSize) + ((scaledTileSize / 8) * 3);
-      this.y = (row * scaledTileSize) + ((scaledTileSize / 8) * 3);
+      this.size = scaledTileSize * 0.75;
+      this.x = (column * scaledTileSize) + ((scaledTileSize / 8) * 1.5);
+      this.y = (row * scaledTileSize) + ((scaledTileSize / 8) * 1.5);
     } else if (type === 'powerPellet') {
-      this.size = scaledTileSize;
+      this.size = scaledTileSize * 1.25;
       this.x = (column * scaledTileSize);
       this.y = (row * scaledTileSize);
     } else {
@@ -2586,7 +2585,7 @@ class Pickup {
 
     this.animationTarget = document.createElement('div');
     this.animationTarget.style.position = 'absolute';
-    this.animationTarget.style.backgroundSize = `${this.size}px`;
+    this.animationTarget.style.backgroundSize = `cover`;
     this.animationTarget.style.backgroundImage = this.determineImage(
       type, points,
     );
@@ -2618,7 +2617,7 @@ class Pickup {
       image = type;
     }
 
-    return `url(app/style/graphics/spriteSheets/pickups/${image}.svg)`;
+    return `url(app/style/graphics/spriteSheets/pickups/${image}.png)`;
   }
 
   /**

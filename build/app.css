@@ -198,12 +198,13 @@ body {
   z-index: -1; }
 
 .loading-dot {
-  background-image: url("../app/style/graphics/spriteSheets/pickups/pacdot.svg");
-  height: 6px;
+  background-image: url("../app/style/graphics/spriteSheets/pickups/pacdot.png");
+  background-size: cover;
+  height: 12px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 6px;
+  width: 12px;
   z-index: -2; }
 
 ._5 {
