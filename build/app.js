@@ -2033,8 +2033,30 @@ class GameCoordinator {
     }
 
     if (this.remainingDots === 0) {
-      this.advanceLevel();
+      this.gameWin();
+      
+      //this.advanceLevel();
     }
+  }
+
+  gameWin(){
+    let cadena = `
+                    <div class="winContenido">
+                      <div>
+                        <h1 style="color:red;">
+                          Victoria! 
+                        </h1>
+                        <p>
+                          Rápido! toma captura de pantalla y envianoslo por instagram, si sos uno de los 2 primeros te podes ganar un combo!
+                        </p>
+                      </div>
+                    </div>
+                `;
+
+    $(".divWin").append(cadena);
+    $(".divWin").slideToggle("fast");
+    this.soundManager.stopAmbience();
+    this.soundManager.setMasterVolume(0);
   }
 
   /**

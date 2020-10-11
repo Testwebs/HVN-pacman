@@ -5,13 +5,15 @@
 
 * {
   font-family: 'Press Start 2P', sans-serif; }
+  
 
 body {
   margin: 0;
   overflow: hidden; }
 
 .overflow-mask {
-  background-color: #000;
+  background-image: url("../app/style/graphics/backdrop.png");
+  background-size: cover;
   color: #fff;
   display: flex;
   height: 100vh;
@@ -311,7 +313,8 @@ body {
 
 @media (orientation: landscape) {
   .movement-buttons {
-    visibility: hidden; } }
+    visibility: hidden; } 
+  }
 
 .error-message {
   color: #231f20;
@@ -382,3 +385,28 @@ body {
     opacity: 0; }
   50% {
     opacity: 1; } }
+
+.divWin{
+  background-image: url("../app/style/graphics/backdrop.png");
+  background-size: cover;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100000;
+  display: none;
+}
+
+.winContenido{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  height: 60vh;
+  margin: 20vh 20vw;
+  color: #fff;
+  font-size: 2em;
+  line-height: 45px;
+  text-align: center;
+}
+
